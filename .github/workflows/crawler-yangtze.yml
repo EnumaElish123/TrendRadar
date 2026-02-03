@@ -1,14 +1,14 @@
-name: Shanghai House News (Evening)
+name: Yangtze Delta House News (Evening)
 
 on:
   schedule:
-    # 北京时间晚上 21:00 (UTC+8 = UTC 13:00)
-    - cron: "0 13 * * *"
+    # 北京时间晚上 20:00 (UTC+8 = UTC 12:00)
+    - cron: "0 12 * * *"
 
   workflow_dispatch:
 
 concurrency:
-  group: crawler-shanghai-${{ github.ref_name }}
+  group: crawler-yangtze-${{ github.ref_name }}
   cancel-in-progress: true
 
 permissions:
@@ -38,10 +38,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run crawler (Shanghai House Topic)
+      - name: Run crawler (Yangtze Delta House Topic)
         env:
-          # 使用上海房产专题关键词配置
-          FREQUENCY_WORDS_PATH: "config/frequency_words_shanghai.txt"
+          # 使用长三角房产专题关键词配置
+          FREQUENCY_WORDS_PATH: "config/frequency_words_yangtze.txt"
           # 通知渠道
           WEWORK_WEBHOOK_URL: ${{ secrets.WEWORK_WEBHOOK_URL }}
           WEWORK_MSG_TYPE: ${{ secrets.WEWORK_MSG_TYPE }}
@@ -76,5 +76,5 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add index.html || true
-          git diff --staged --quiet || git commit -m "📊 [Shanghai] Update hot news report [skip ci]"
+          git diff --staged --quiet || git commit -m "📊 [YangtzeHouse] Update hot news report [skip ci]"
           git push || echo "Nothing to push"
