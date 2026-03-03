@@ -28,6 +28,16 @@
 震惊
 细思极恐
 不转不是
+必看
+刷爆
+已疯传
+史上最
+万万没想到
+看完沉默
+太可怕了
+绝了
+炸裂
+速看
 
 
 # ───────────────────────────────────────────────────────────────
@@ -92,7 +102,7 @@ Transformer
 /深度求索|DeepSeek|幻方量化|梁文锋/ => DeepSeek
 
 [Google AI]
-/Gemini|DeepMind|AlphaGo|AlphaFold|Bard|NotebookLM/ => Google AI
+/Gemini|DeepMind|AlphaGo|AlphaFold|NotebookLM|Veo|Imagen/ => Google AI
 
 [微软AI]
 /Copilot|Azure AI|Phi-/ => 微软AI
@@ -128,7 +138,7 @@ Transformer
 /讯飞|星火/ => 讯飞星火
 
 [xAI]
-/\bxAI\b|Grok/ => xAI/Grok
+/(?<![a-zA-Z])xAI(?![a-zA-Z])|Grok/ => xAI/Grok
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -136,13 +146,14 @@ Transformer
 # ═══════════════════════════════════════════════════════════════
 
 [AI编程]
-/Cursor|GitHub Copilot|Windsurf|Cline|Tabnine|Codeium|Devin/ => AI编程工具
+/Cursor|GitHub Copilot|Windsurf|Cline|Tabnine|Codeium|Devin|Trae|bolt\.new|Lovable|v0\.dev/ => AI编程工具
 
 [AI绘画]
 /Midjourney|Stable Diffusion|SDXL|FLUX|ComfyUI|SD3|图像生成/ => AI绘画
 
 [AI视频]
-/Runway|Pika|可灵|Kling|Sora|HeyGen|AI视频|视频生成/ => AI视频
+# 注：Sora 归属 [OpenAI] 组，此处不重复，避免同一新闻被双重计数
+/Runway|Pika|可灵|Kling|HeyGen|Vidu|即梦|AI视频|视频生成/ => AI视频
 
 [AI音乐]
 /Suno|Udio|AI音乐|音乐生成/ => AI音乐

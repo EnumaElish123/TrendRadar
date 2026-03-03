@@ -230,8 +230,8 @@ notification:
   # 💡 想要精准定时？建议使用 Docker 部署在个人服务器上
   push_window:
     enabled: false                    # 是否启用推送时间窗口控制
-    start: "20:00"                    # 开始时间（北京时间）
-    end: "22:00"                      # 结束时间（北京时间）
+    start: "20:00"                    # 开始时间（使用 app.timezone 配置的时区）
+    end: "22:00"                      # 结束时间（使用 app.timezone 配置的时区）
     once_per_day: true                # true=窗口内只推送一次，false=窗口内每次执行都推送
 
   # 推送渠道配置
@@ -431,9 +431,9 @@ ai_analysis:
                                     # 推送消息顶部会显示实际的 AI 分析数供参考
 
                                     # api 成本估算 (仅供参考)
-                                      # 按默认模型(deepseek)
-                                      # max_news_for_analysis 为 50 条
-                                      # include_rank_timeline 为 false
+                                       # 按默认模型(deepseek)
+                                       # max_news_for_analysis 为 60 条（当前配置值）
+                                       # include_rank_timeline 为 false
                                     # 则
                                       # GitHub Action 部署默认推送约 20 次（每小时推送一次）， 约 0.1 元/天
                                       # Docker 部署默认推送 48 次(每半小时推送一次)， 约 0.2 元/天
